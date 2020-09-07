@@ -18,14 +18,26 @@ class HomeFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
+    ): View?
+    {
+        /****************************************************
+         * initial scripts for text and tab fragment shit
+         ****************************************************/
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        //layout utk text box tu
         val root = inflater.inflate(R.layout.fragment_home, container, false)
+        //text box
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        //data binding text tu versi android
+        homeViewModel.text.observe(viewLifecycleOwner, Observer { textView.text = it })
+
         return root
+
+        /****************************************************
+         * initial scripts for text and tab fragment shit
+         ****************************************************/
+
+
     }
 }
