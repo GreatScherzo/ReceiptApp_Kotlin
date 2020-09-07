@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.receiptapp_kotlin.R
 
-class DashboardFragment : Fragment() {
+class AnalyticsOverviewFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var analyticsOverviewViewModel: AnalyticsOverviewViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+        analyticsOverviewViewModel =
+                ViewModelProviders.of(this).get(AnalyticsOverviewViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        analyticsOverviewViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
