@@ -1,4 +1,4 @@
-package com.example.receiptapp_kotlin.ui.notifications
+package com.example.receiptapp_kotlin.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.receiptapp_kotlin.R
 
-class HistoryFragment : Fragment() {
+class DashboardFragment : Fragment() {
 
-    private lateinit var historyViewModel: HistoryViewModel
+    private lateinit var dashboardViewModel: DashboardViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        historyViewModel =
-                ViewModelProviders.of(this).get(HistoryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        historyViewModel.text.observe(viewLifecycleOwner, Observer {
+        dashboardViewModel =
+                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val textView: TextView = root.findViewById(R.id.text_dashboard)
+        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
