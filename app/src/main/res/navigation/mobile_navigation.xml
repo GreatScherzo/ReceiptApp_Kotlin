@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_AnalyticsOverview"
-        android:name="com.example.receiptapp_kotlin.ui.dashboard.AnalyticsOverviewFragment"
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.receiptapp_kotlin.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_History"
-        android:name="com.example.receiptapp_kotlin.ui.notifications.HistoryFragment"
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.receiptapp_kotlin.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
