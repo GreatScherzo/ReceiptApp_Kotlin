@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity()
         /****************************************************
          * menatang camera
          ****************************************************/
+
         textureView = findViewById<TextureView>(R.id.textureView_Camera)
         textureView.surfaceTextureListener = surfaceTextureListener
         startBackgroundThread()
